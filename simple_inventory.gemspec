@@ -6,7 +6,7 @@ require "simple_inventory/version"
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
   s.name        = "simple_inventory"
-  s.version     = SimpleInventoryManagement::VERSION
+  s.version     = SimpleInventory::VERSION
   s.authors     = ["Mikhail"]
   s.email       = ["mik3weider@gmail.com"]
   s.homepage    = ''
@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
   s.description = 'Allows to manipulate of amount of items'
   s.license     = 'MIT'
 
-  s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
+  s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
   s.add_dependency 'rails', '~> 4.2.1'
 

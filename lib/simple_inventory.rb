@@ -41,9 +41,11 @@ module SimpleInventory
       end
 
       def update_amount
-        new_amount = yield find_asset[:amount]
+        new_amount = yield find_asset['amount']
         sql = "UPDATE inventory_management SET amount=#{new_amount} WHERE model='#{model_name}' AND instance_id=#{instance_id}"
         ActiveRecord::Base.connection.insert(sql)
+
+        new_amount
       end
 
       def amount=(amount)
@@ -51,7 +53,7 @@ module SimpleInventory
       end
 
       def amount
-        find_asset
+        find_asset['amount']
       end
 
       def model_name

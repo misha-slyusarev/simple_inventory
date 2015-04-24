@@ -1,3 +1,0 @@
-= SimpleInventory
-
-Allows to add a simple inventory management to your Rails model.
