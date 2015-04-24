@@ -45,16 +45,25 @@ module SimpleInventoryManagement
         ActiveRecord::Base.connection.insert(sql)
       end
 
+      def amount=(amount)
+        update_amount { amount }
+      end
+
+      def amount
+        find_asset
+      end
+
+      def model_name
+        self.class.model_name
+      end
+
+      def instance_id
+        self.id
+      end
     end
   end
 
-  def model_name
-    self.class.model_name
-  end
 
-  def instance_id
-    self.id
-  end
 end
 
 ActiveRecord::Base.send :include, SimpleInventoryManagement::HasInventoryHandling
