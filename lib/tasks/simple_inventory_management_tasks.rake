@@ -1,7 +1,7 @@
-namespace :simple_inventory_management do
+namespace :simple_inventory do
 
   desc 'Making required schema changes'
   task :install do
-    system 'rails g simple_inventory_management'
+    system 'rails g simple_inventory'
   end
 end

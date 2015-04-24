@@ -1,3 +1,3 @@
 class Item < ActiveRecord::Base
-  has_inventory_handling
+  has_simple_inventory
 end

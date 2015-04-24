@@ -1,11 +1,11 @@
 $:.push File.expand_path("../lib", __FILE__)
 
 # Maintain your gem's version:
-require "simple_inventory_management/version"
+require "simple_inventory/version"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
-  s.name        = "simple_inventory_management"
+  s.name        = "simple_inventory"
   s.version     = SimpleInventoryManagement::VERSION
   s.authors     = ["Mikhail"]
   s.email       = ["mik3weider@gmail.com"]

@@ -1,16 +1,17 @@
-module SimpleInventoryManagement
+module SimpleInventory
 
-  module HasInventoryHandling
+  module HasSimpleInventory
     extend ActiveSupport::Concern
 
     included do
-      #self.send(:private, :find_record)
-      #self.send(:private, :change_inventory)
     end
 
     module ClassMethods
-      def has_inventory_handling
-        include SimpleInventoryManagement::HasInventoryHandling::LocalInstanceMethods
+      def has_simple_inventory
+        include SimpleInventory::HasSimpleInventory::LocalInstanceMethods
+
+        self.send(:private, :find_asset)
+        self.send(:private, :update_amount)
       end
 
       def set_default_amount(amount: 0)
@@ -63,7 +64,6 @@ module SimpleInventoryManagement
     end
   end
 
-
 end
 
-ActiveRecord::Base.send :include, SimpleInventoryManagement::HasInventoryHandling
+ActiveRecord::Base.send :include, SimpleInventory::HasSimpleInventory

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe SimpleInventoryManagement::HasInventoryHandling do
+describe SimpleInventory::HasSimpleInventory do
 
   let(:default_amount) { 1 }
   let(:item) { Item.create }
@@ -9,7 +9,7 @@ describe SimpleInventoryManagement::HasInventoryHandling do
     item.amount = default_amount
   end
 
-  context "with 'has_inventory_handling' added to a model" do
+  context 'added to an Item' do
     subject { item }
 
     it { should respond_to(:increase_amount) }
