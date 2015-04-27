@@ -4,7 +4,7 @@ module SimpleInventory
     argument :table_prefix, type: 'string', default: 'SimpleInventory'
     source_root File.expand_path('../../templates', __FILE__)
 
-    def install
+    def perform
       table_prefix_camelized = table_prefix.camelize
 
       generate 'migration', "Create#{table_prefix_camelized}Model name:string default_amount:integer"
