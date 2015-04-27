@@ -1,4 +1,12 @@
 module SimpleInventory
+  class << self
+    attr_accessor :configuration
+  end
+
+  def self.setup
+    self.configuration ||= Configuration.new
+    yield(configuration)
+  end
 
   module HasSimpleInventory
     extend ActiveSupport::Concern
