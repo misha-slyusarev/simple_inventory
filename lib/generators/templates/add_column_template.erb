@@ -1,0 +1,5 @@
+class <%= migration_class_name %> < ActiveRecord::Migration
+    def self.change
+        add_column :<%= table_name %>, :amount, :integer, null: false, default: 0
+    end
+end
